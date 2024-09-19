@@ -32,8 +32,9 @@ namespace pet_hotel.Controllers
                 return NotFound();
             }
 
-            return petOwner;
-        }
+            return petOwner; // :) Hope y'all are having fun. :) DON'T FORGET TO RECOVER!
+        }   // this stuff is fun :)🙌
+        
 
         [HttpPost]
         public PetOwner Post(PetOwner petOwner)
@@ -50,6 +51,16 @@ namespace pet_hotel.Controllers
             _context.Update(petOwner);
             _context.SaveChanges();
             return petOwner;
+        }
+         [HttpDelete("{id}")]
+        public void Delete(int id) 
+        {
+            PetOwner petOwner = _context.petOwners.Find(id);
+
+            _context.petOwners.Remove(petOwner);
+
+            _context.SaveChanges();
+            Response.StatusCode = 204;
         }
     }
 }
