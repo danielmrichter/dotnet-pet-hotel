@@ -10,6 +10,7 @@ namespace pet_hotel
     // name
     // emailAddress
     // petCount (will be 0 for time being)
+    //PetOwner is the structure of the pet owner object
     public class PetOwner
     {
         public int id { get; set; }

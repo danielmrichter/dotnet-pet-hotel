@@ -19,12 +19,23 @@ using Microsoft.EntityFrameworkCore;
 */
 namespace pet_hotel.Models
 {
+    //DbContext is a class that represents a session with the database. 
+    //It allows you to interact with the database using C# objects instead 
+    //of writing raw SQL queries
     public class ApplicationContext : DbContext
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
         // public DbSet<MyClass> MyClassTable { get; set; }
-        public DbSet<PetOwner> petOwners { get; set; }
 
+        //petOwners is the datatable name
+        //PetOwner is the structure of the pet owner object
+        //get and set lets the program and database easily interact without
+        //needing to worry about the details of how the data is stored
+        public DbSet<PetOwner> petOwners { get; set; }
+        //pets is the datatable name
+        //Pet is the structure of the pet object
+        //get and set lets the program and database easily interact without
+        //needing to worry about the details of how the data is stored
         public DbSet<Pet> pets {get; set;}
     }
     
